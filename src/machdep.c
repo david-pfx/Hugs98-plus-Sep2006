@@ -1888,16 +1888,17 @@ Int c1, c2; {
  * Printf-related operations:
  *-------------------------------------------------------------------------*/
 
-#if !HAVE_VSNPRINTF
-int vsnprintf(char* buffer, size_t count, const char* fmt, va_list ap);
-int vsnprintf(char* buffer, size_t count, const char* fmt, va_list ap) {
-#if HAVE__VSNPRINTF
-    return _vsnprintf(buffer, count, fmt, ap);
-#else
-    return 0;
-#endif
-}
-#endif /* HAVE_VSNPRINTF */
+// dmb: comment out, not needed
+//#if !HAVE_VSNPRINTF
+//int vsnprintf(char* buffer, size_t count, const char* fmt, va_list ap);
+//int vsnprintf(char* buffer, size_t count, const char* fmt, va_list ap) {
+//#if HAVE__VSNPRINTF
+//    return _vsnprintf(buffer, count, fmt, ap);
+//#else
+//    return 0;
+//#endif
+//}
+//#endif /* HAVE_VSNPRINTF */
 
 #if !HAVE_SNPRINTF && !HAVE__SNPRINTF
 int snprintf(char* buffer, size_t count, const char* fmt, ...);

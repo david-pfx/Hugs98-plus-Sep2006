@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{83954CE1-BCC8-44BD-8913-4647784582C3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.29403.142</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4312;4311;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)winhugs.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)winhugs.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)winhugs.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\builtin.c" />
+    <ClCompile Include="..\char.c" />
+    <ClCompile Include="..\compiler.c" />
+    <ClCompile Include="..\edit.c" />
+    <ClCompile Include="..\errors.c" />
+    <ClCompile Include="..\evaluator.c" />
+    <ClCompile Include="..\ffi.c" />
+    <ClCompile Include="..\goal.c" />
+    <ClCompile Include="..\hugs.c" />
+    <ClCompile Include="..\input.c" />
+    <ClCompile Include="..\machdep.c" />
+    <ClCompile Include="..\machine.c" />
+    <ClCompile Include="..\module.c" />
+    <ClCompile Include="..\observe.c" />
+    <ClCompile Include="..\opts.c" />
+    <ClCompile Include="..\output.c" />
+    <ClCompile Include="..\plugin.c" />
+    <ClCompile Include="..\script.c" />
+    <ClCompile Include="..\server.c" />
+    <ClCompile Include="..\static.c" />
+    <ClCompile Include="..\storage.c" />
+    <ClCompile Include="..\strutil.c" />
+    <ClCompile Include="..\subst.c" />
+    <ClCompile Include="..\type.c" />
+    <ClCompile Include="..\version.c" />
+    <ClCompile Include="DlgAbout.c" />
+    <ClCompile Include="DlgMain.c" />
+    <ClCompile Include="DlgOptions.c" />
+    <ClCompile Include="Editors.c" />
+    <ClCompile Include="General.c" />
+    <ClCompile Include="History.c" />
+    <ClCompile Include="IORemap.c" />
+    <ClCompile Include="Legacy.c" />
+    <ClCompile Include="MruFiles.c" />
+    <ClCompile Include="Registry.c" />
+    <ClCompile Include="RtfWindow.c" />
+    <ClCompile Include="StartCode.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\builtin.h" />
+    <ClInclude Include="..\char.h" />
+    <ClInclude Include="..\command.h" />
+    <ClInclude Include="..\connect.h" />
+    <ClInclude Include="..\errors.h" />
+    <ClInclude Include="..\evaluator.h" />
+    <ClInclude Include="..\goal.h" />
+    <ClInclude Include="..\HsFFI.h" />
+    <ClInclude Include="..\HugsAPI.h" />
+    <ClInclude Include="..\machdep.h" />
+    <ClInclude Include="..\module.h" />
+    <ClInclude Include="..\observe.h" />
+    <ClInclude Include="..\opts.h" />
+    <ClInclude Include="..\output.h" />
+    <ClInclude Include="..\prelude.h" />
+    <ClInclude Include="..\script.h" />
+    <ClInclude Include="..\server.h" />
+    <ClInclude Include="..\storage.h" />
+    <ClInclude Include="..\strutil.h" />
+    <ClInclude Include="..\subst.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="options.h" />
+    <ClInclude Include="platform.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resrc1.h" />
+    <ClInclude Include="RtfWindow.h" />
+    <ClInclude Include="Winhugs.h" />
+    <ClInclude Include="Winmenu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\button.bmp" />
+    <Image Include="resource\classbmp.bmp" />
+    <Image Include="resource\classesd.bmp" />
+    <Image Include="resource\copybutt.bmp" />
+    <Image Include="resource\cutbutto.bmp" />
+    <Image Include="resource\datacons.bmp" />
+    <Image Include="resource\deletebu.bmp" />
+    <Image Include="resource\editbutt.bmp" />
+    <Image Include="resource\exitbutt.bmp" />
+    <Image Include="resource\helpbutt.bmp" />
+    <Image Include="resource\hierarch.bmp" />
+    <Image Include="resource\hugs1.ico" />
+    <Image Include="resource\hugs32bm.bmp" />
+    <Image Include="resource\hugsdoc.ico" />
+    <Image Include="resource\instance.bmp" />
+    <Image Include="resource\logo.bmp" />
+    <Image Include="resource\memberbm.bmp" />
+    <Image Include="resource\namebmp.bmp" />
+    <Image Include="resource\namesdlg.bmp" />
+    <Image Include="resource\newtypeb.bmp" />
+    <Image Include="resource\openfile.bmp" />
+    <Image Include="resource\openproj.bmp" />
+    <Image Include="resource\optionsb.bmp" />
+    <Image Include="resource\optionsd.bmp" />
+    <Image Include="resource\pastebut.bmp" />
+    <Image Include="resource\primbmp.bmp" />
+    <Image Include="resource\pushedbu.bmp" />
+    <Image Include="resource\relobutt.bmp" />
+    <Image Include="resource\resizeco.bmp" />
+    <Image Include="resource\runbutto.bmp" />
+    <Image Include="resource\selector.bmp" />
+    <Image Include="resource\smanbutt.bmp" />
+    <Image Include="resource\smand.bmp" />
+    <Image Include="resource\stopbutt.bmp" />
+    <Image Include="resource\toolbar.bmp" />
+    <Image Include="resource\tyconsdl.bmp" />
+    <Image Include="resource\typecons.bmp" />
+    <Image Include="resource\typesinb.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\gc.cur" />
+    <None Include="resource\move.cur" />
+    <None Include="resource\rt_manif.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="resource\winhugs.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="winhugs.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

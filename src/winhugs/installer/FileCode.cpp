@@ -32,7 +32,9 @@ bool CanReadWrite(char* File)
 
 void NormalPath(char* File)
 {
-	for (int i = 0; File[i] != 0; i++)
+   // dmb: fix CPP standards compliance issue
+        int i;
+	for (i = 0; File[i] != 0; i++)
 	{
 		if (File[i] == '/')
 			File[i] = '\\';

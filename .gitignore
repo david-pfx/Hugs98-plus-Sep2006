@@ -1,0 +1,8 @@
+*.obj
+Debug
+DebugRunhugs
+DebugFfihugs
+DebugHugs
+*.user
+*.filters
+.vs
