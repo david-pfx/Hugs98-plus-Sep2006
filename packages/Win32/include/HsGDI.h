@@ -4,11 +4,13 @@
 #include <windows.h>
 
 #ifndef INLINE
-# if defined(_MSC_VER)
-#  define INLINE extern __inline
-# else
-#  define INLINE extern inline
-# endif
+// dmb: fix INLINE compile error
+//# if defined(_MSC_VER)
+//#  define INLINE extern __inline
+//# else
+//#  define INLINE extern inline
+#  define INLINE inline
+//# endif
 #endif
 
 INLINE COLORREF rgb(BYTE r, BYTE g, BYTE b) { return RGB(r, g, b); }

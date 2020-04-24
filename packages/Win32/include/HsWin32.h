@@ -3,12 +3,14 @@
 
 #include <windows.h>
 
+// dmb: fix INLINE
 #ifndef INLINE
-# if defined(_MSC_VER)
-#  define INLINE extern __inline
-# else
-#  define INLINE extern inline
-# endif
+// # if defined(_MSC_VER)
+// #  define INLINE extern __inline
+// # else
+// #  define INLINE extern inline
+// # endif
+#  define INLINE inline
 #endif
 
 INLINE UINT castPtrToUINT(void *p) { return (UINT)p; }

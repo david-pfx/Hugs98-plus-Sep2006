@@ -17,13 +17,14 @@
 #undef PACKAGE_VERSION
 
 #ifndef INLINE
-# if defined(_MSC_VER)
-#  define INLINE extern __inline
-# elif defined(__GNUC__)
-#  define INLINE extern inline
-# else
+// dmb: fix INLINE compile error
+//# if defined(_MSC_VER)
+//#  define INLINE extern __inline
+//# elif defined(__GNUC__)
+//#  define INLINE extern inline
+//# else
 #  define INLINE inline
-# endif
+//# endif
 #endif
 
 #if defined(HAVE_WINSOCK_H) && !defined(__CYGWIN__)
