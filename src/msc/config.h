@@ -4,6 +4,13 @@
 /* platform-specific defines */
 #include "platform.h"
 
+// dmb: suppress warnings related to runtime library
+#pragma warning(disable: 4996) // This function or variable may be unsafe.Consider using xxx_s instead.
+// dmb: suppress warnings related to () vs (void)
+#pragma warning(disable: 4113) // differs in parameter lists 
+// dmb: the use of __time64_t triggers warning due to conversion to Int 
+#pragma warning(disable: 4244) // possible loss of data
+
 /* Define to one of `_getb67', `GETB67', `getb67' for Cray-2 and Cray-YMP
    systems. This function is required for `alloca.c' support on those systems.
    */

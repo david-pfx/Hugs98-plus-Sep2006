@@ -6,6 +6,9 @@
 #include <commctrl.h>
 #include <tchar.h>
 
+// dmb: suppress warnings related to runtime library
+#pragma warning(disable: 4996) // Deprecation
+
 // Globally shared variables
 extern HINSTANCE hThisInstance;
 extern HWND hThisWindow;

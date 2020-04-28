@@ -1,15 +1,23 @@
-# HUGS
+# HUGS for WINDOWS
 
-This is a download of Hugs from <https://www.haskell.org/hugs/downloads/2006-09/hugs98-plus-Sep2006.tar.gz>, with the following:
-* all the SLN files have been loaded into Visual Studio 2019 and converted
-* all the SLN files have been built, with minimal changes to achieve a successful build.
-* the Hugs programs all run, but are not usable until a prelude is created.
+This is a download of Hugs from <https://www.haskell.org/hugs/downloads/2006-09/hugs98-plus-Sep2006.tar.gz>. 
+The intent is to produce usable builds of all the Windows programs.
 
-Here are the results so far:
-* Installer.sln: Compiled 1 project with one error. Fixed one CPP compliance issue. 22 deprecation warnings, nothing serious.
-* Uninstaller.sln: Compiled 1 project with 13 deprecation warnings, nothing serious.
-* Hugs.sln: compiled 3 projects with 3 errors. Fixed by commenting out unneeded configuration items. 
-504 warnings, mixture of deprecation and standards compliance. Nothing too serious, but should be reviewed.
-* Winhugs.sln: compiled 1 project with 224 warnings, a mix of deprecation, bad code and casting issues. Should be reviewed.
+The steps so far are:
+* Downloaded and unzipped into `<rootdir>`. Check in.
+* Loaded all the SLN files into Visual Studio 2019 and converted
+* Build all SLN files, with minimal changes to achieve a successful build. Check in.
+* Check that all Hugs programs run, but are not usable until a prelude is created.
+* Install MinGW, start command shell, cd `<rootdir>`.
+* Run `make` in `<rootdir>`.
+* Wait. Fails after about 20 mins.
+* Fix INLINE and PBYTE bugs (see repo). Check in.
+* Run `make clean` and `make` in `<rootdir>`.
+* Wait. Succeeds after around 2 hours (skips some)
+* Check in. Delete generated `config.h` and `options.h`.
+* Open MSVC x4 and rebuild SLN files (nothing changed really)
+* In WinHugs set env `HUGSDIR=<rootdir>\hugsdir`
+* Run.
+* Fixed all warnings. Checked all builds.
+* Check in and push.
 
-The repo has been updated at this point.

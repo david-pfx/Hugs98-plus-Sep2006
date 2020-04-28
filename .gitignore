@@ -7,3 +7,8 @@ DebugHugs
 *.filters
 .vs
 *.o
+*.db
+Release
+ReleaseFfihugs
+ReleaseHugs
+ReleaseRunhugs
