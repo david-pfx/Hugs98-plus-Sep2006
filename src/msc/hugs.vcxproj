@@ -188,9 +188,17 @@
     <ResourceCompile Include="hugs.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\parser.y" />
-  </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+      <CustomBuild Include="..\parser.y">
+        <FileType>Document</FileType>
+        <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\MinGW\msys\1.0\bin\bison.exe -o ../parser.c %(FullPath)</Command>
+        <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Bison compilation</Message>
+        <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Directory)parser.c</Outputs>
+        <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\MinGW\msys\1.0\bin\bison.exe -o ../parser.c %(FullPath)</Command>
+        <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Bison compilation</Message>
+        <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Directory)parser.c</Outputs>
+      </CustomBuild>
+    </ItemGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
